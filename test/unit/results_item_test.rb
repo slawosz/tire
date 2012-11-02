@@ -69,6 +69,10 @@ module Tire
         assert @document.respond_to?(:title)
       end
 
+      should "respond_to? should allow two arguments" do
+        assert @document.respond_to?(:title, true)
+      end
+
       should "return nil for non-existing keys/methods" do
         assert_nothing_raised { @document.whatever }
         assert_nil @document.whatever

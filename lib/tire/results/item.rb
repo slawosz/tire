@@ -27,7 +27,7 @@ module Tire
         @attributes.has_key?(method_name.to_sym) ? @attributes[method_name.to_sym] : nil
       end
 
-      def respond_to?(method_name)
+      def respond_to?(method_name, include_private = false)
         @attributes.has_key?(method_name.to_sym) || super
       end
 
